@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Auth;
 use App\Models\User;
+use HttpOz\Roles\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -74,6 +75,9 @@ class RegisterController extends Controller
 
     protected function registered(Request $request, $user)
     {
+      $userRole = Role::whereSlug('user')->first();
+      $user->attachRole($userRole);
+
       Auth::logout();
       return redirect('/login')->withInfo('An activation email has been sent to the provided address.');
     }
