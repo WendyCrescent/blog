@@ -1,3 +1,6 @@
+.navbar{
+  margin-bottom: 0px !important;
+}
 .container {
   max-width: 960px;
   margin-left: auto;
