@@ -9,8 +9,11 @@ class PostController extends Controller
 {
   public function show(Post $post)
   {
+    $comments = $post->nestedComments();
+
     return view('post.post')->with([
-      'post' => $post
+      'post' => $post,
+      'comments' => $comments,
     ]);
   }
 }

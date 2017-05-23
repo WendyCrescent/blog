@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Eloquent\NestableCommentsTrait;
 
 class Post extends Model
 {
+  use NestableCommentsTrait;
+
   public function getRouteKeyName()
   {
     return 'slug';
@@ -29,5 +32,10 @@ class Post extends Model
   public function tags()
   {
     return $this->morphToMany(Tag::class, 'taggable');
+  }
+
+  public function comments()
+  {
+    return $this->morphMany(Comment::class, 'commentable');
   }
 }
