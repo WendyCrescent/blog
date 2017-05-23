@@ -9,7 +9,7 @@
       By <a href="{{ route('author', $post->author->id) }}"> {{ $post->author->name }} </a> <span class="post__time"> {{ $post->created_at->diffForHumans() }} </span>
     </div>
     <div class="image-preview">
-      <img src="{{ $post->image }}" alt="" class="image-preview__image">
+      <img src="{{ asset($post->image) }}" alt="" class="image-preview__image">
     </div>
     <div class="post__preview">
       {!! Markdown::convertToHtml(e($post->teaser)) !!}

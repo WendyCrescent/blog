@@ -1,3 +1,3 @@
 <div class="image-header">
-  <img src="{{ $url }}" alt="{{ $alt or '' }}" class="image-header__image">
+  <img src="{{ asset($url) }}" alt="{{ $alt or '' }}" class="image-header__image">
 </div>
