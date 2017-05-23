@@ -3,10 +3,12 @@
 @section('title', 'Post')
 
 @section('header')
-  @include('post.partials.image', [
-    'url' =>  $post->image,
-    'alt' => 'Coding',
-  ])
+  @if($post->image)
+    @include('post.partials.image', [
+      'url' =>  $post->image,
+      'alt' => 'Coding',
+    ])
+  @endif
 @endsection
 
 @section('content')
