@@ -17,6 +17,9 @@
       {!! Markdown::convertToHtml(e($post->teaser)) !!}
     </div>
   </div>
+
+  <hr>
+  
   @endforeach
 @else
   <p> No posts to see here. </p>
