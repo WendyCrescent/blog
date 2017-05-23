@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>@yield('title') | {{ config('app.name') }}</title>
 
     <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/e0d52a7952.js"></script>
